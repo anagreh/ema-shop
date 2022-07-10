@@ -38,7 +38,7 @@ const MyItems = (props: Props) => {
 
   return (
     <Container>
-      <Row>
+      <Row  className='pt-3'>
         {items.map((item) => {
           return (
             <Col md={4} lg={3} className="mb-2" key={item._id}>

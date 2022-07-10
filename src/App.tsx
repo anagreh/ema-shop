@@ -1,11 +1,6 @@
 import "./styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { Container, Row, Col } from "react-bootstrap";
-import ItemCard from "./components/ItemCard";
-import LogInForm from "./components/LogInForm";
-import CreateItemForm from "./components/CreateItemForm";
-import SignupForm from "./components/SignupForm";
 import { NavBar } from "./components/NavBar";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";

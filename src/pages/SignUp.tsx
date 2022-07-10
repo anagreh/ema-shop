@@ -1,11 +1,13 @@
+import { Container } from "react-bootstrap";
 import SignupForm from "../components/SignupForm";
 
 type Props = {};
 const SignUp = (props: Props) => {
   return (
-    <div>
+    <Container className="rounded mt-3">
+      <h1>Sign Up</h1>
       <SignupForm />
-    </div>
+    </Container>
   );
 };
 export default SignUp;

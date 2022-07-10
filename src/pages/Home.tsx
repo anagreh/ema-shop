@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useQuery } from "react-query";
 import ItemCard from "../components/ItemCard";
@@ -23,16 +22,14 @@ const fetchItems = async () => {
 
 type Props = {};
 const Home = (props: Props) => {
-  const [items, setItems] = useState<Item[]>([]);
 
-  useQuery("items", fetchItems,{onSuccess(data){
-    setItems(data)
-  }});
+  const {isLoading,data:items} = useQuery<Item[]>("items", fetchItems);
 
   return (
     <Container>
-      <Row>
-        {items.map((item) => {
+      <Row className='pt-3'>
+        {isLoading && <p className="text-light">Loading ...</p>}
+        {items && items.map((item) => {
           return (
             <Col md={4} lg={3} className="mb-2" key={item._id}>
               <ItemCard item={item}/>
