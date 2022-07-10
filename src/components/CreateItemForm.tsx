@@ -39,7 +39,7 @@ const CreateItemForm = (props: Props) => {
   } = useForm<FormSchemaType>({ resolver: zodResolver(formSchema) });
 
   const navigate = useNavigate();
-  const mutateItem = useMutation(postItem, { onSuccess: (data) => navigate("./" + data._id) });
+  const mutateItem = useMutation(postItem, { onSuccess: (data) => navigate("/items/" + data._id) });
 
   const onSubmit = (data: FormSchemaType) => {
     mutateItem.mutate(data);
