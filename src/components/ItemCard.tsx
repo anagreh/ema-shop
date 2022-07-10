@@ -32,6 +32,10 @@ const ItemCard = ({ item, variant = "def" ,delItem }: Props) => {
     <Card className="mx-auto">
       <Card.Img
         className="mx-auto img-thumbnail"
+        style={{
+          height:256,
+          objectFit:'cover'
+        }}
         src={imgSrc}
         width="auto"
         height="auto"
@@ -41,7 +45,7 @@ const ItemCard = ({ item, variant = "def" ,delItem }: Props) => {
         <div>
           <Card.Title className="card-title font-weight-bold">{item.name}</Card.Title>
           <Card.Text className="card-text">${item.price}</Card.Text>
-          <Link to={`items/${item._id}`} className="btn details px-auto">
+          <Link to={`/items/${item._id}`} className="btn details px-auto">
             view details
           </Link>
           <br />
